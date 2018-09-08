@@ -26,14 +26,18 @@ app.use(bodyParser.urlencoded({extended: ture}));
 app.use(express.statick("public"));
 
 //Connection to Mongo DB
-mongoose.connect("mongodb://localhost/week18Populater");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
 
 
-//tengo que crear 4 rutas 
-
-//ruta 1: capturar info de la pag y llenar la base de datos
-//ruta 2: mostrar todos los articulos
-//ruta 3: mostrar articulos salvados
-//ruta 4: notas por aticulos
 
 
+// Start the server
+app.listen(PORT, function() {
+    console.log("App running on port " + PORT + "!");
+  });
+  
