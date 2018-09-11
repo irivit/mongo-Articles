@@ -13,7 +13,7 @@
   {{/each}}
 
   {{!-- modal for displaying and creating notes --}}
-  <div id="noteModal" class="modal fade" role="dialog">
+  <div id="notes" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
       <div class="modal-content">
         <div class="modal-header">
@@ -21,8 +21,8 @@
           <h4 class="modal-title text-center">Add a note</h4>
         </div>
         <div class="modal-body">
-          <input type="text" id="noteTitleEntry" class="noteInput" placeholder="Enter Title">
-          <input type="text" id="noteBodyEntry" class="noteInput" placeholder="Enter Body">
+          <input type="text" id="titleinput" class="noteInput" placeholder="Enter Title">
+          <input type="text" id="bodyinput" class="noteInput" placeholder="Enter Body">
           <div id="noteArea"></div>
         </div>
         <div class="modal-footer">
